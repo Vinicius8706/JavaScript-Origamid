@@ -34,3 +34,22 @@ function corFavorita(cor){
 addEventListener ('click', function(){
   console.log('Clicou')
 })
+
+function imc2(peso, altura){
+  var imc =  peso /(altura **2);
+  console.log(imc)
+}
+
+imc2(80, 1.8)
+
+function terceiraIdade(idade){
+  if(typeof idade != 'number'){
+    return 'Informe a sua idade!'
+  }else if(idade >= 60){
+    return true
+  }else{
+    return false
+  }
+}
+
+console.log(terceiraIdade(60))
