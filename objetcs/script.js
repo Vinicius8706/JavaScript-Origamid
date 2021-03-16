@@ -46,3 +46,23 @@ var dadospessoais ={
 }
 
 console.log(`${dadospessoais.nome} ${dadospessoais.sobrenome}`)
+
+var carro = {
+  preco: 3080,
+  portas: 4,
+  marca: 'Audi',
+}
+
+var cachorro = {
+  raça: 'Labrador',
+  cor: 'preto',
+  idade: 10,
+  latir(pessoa){
+    if(pessoa === 'homem'){
+      return this.latir
+    }else{
+      return 'Nada'
+    }
+  }
+
+}
