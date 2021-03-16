@@ -22,3 +22,27 @@ Math.random()
 
 var pi = Math.PI
 console.log(Math.random)
+
+var menu ={
+  width: 800, 
+  height: 50, 
+  backgroundColor: '#84E', 
+  metadeHeight(){
+    return this.height /2 ;
+  }
+}
+
+menu.backgroundColor ="#000000"
+
+menu.color = 'blue'
+
+var bg = menu.backgroundColor
+
+var dadospessoais ={
+  nome: 'Vinicius',
+  sobrenome: "Silva",
+  idade: 20, 
+  profissao: 'Freela'
+}
+
+console.log(`${dadospessoais.nome} ${dadospessoais.sobrenome}`)
