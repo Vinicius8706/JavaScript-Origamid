@@ -66,3 +66,13 @@ var cachorro = {
   }
 
 }
+
+var nome = 'André'
+
+nome.length
+nome.charAt(1)
+nome.replace
+
+var btn = document.querySelector('.btn')
+btn.classList.add('active')
+
