@@ -1,29 +1,44 @@
-const listaAnimais = document.querySelector('.animais-lista')
+const img = document.querySelector('img')
 
-const height = listaAnimais.scrollHeight
+const imgTop = img.offsetTop
 
-console.log(height)
+console.log(imgTop)
 
-const animaisTop = listaAnimais.offsetTop; // distancia do topo para os animais
-const primeiroh2 = document.querySelector('h2'); 
+const imagens = document.querySelectorAll('img')
 
-const h2left = primeiroh2.offsetLeft
-console.log(h2left)
+imagens.forEach((imagem)=>{
+  console.log(imagem.offsetWidth)
+})
 
-const rect = primeiroh2.getBoundingClientRect()
+console.log(imagens)
 
-console.log(rect)
-
-if(rect, top < 0 ){
-  console.log('Passou do elemento')
+function somaImagens (soma){
+  const imagens = document.querySelectorAll('img')
+  imagens.forEach((imagem)=>{
+  soma = soma + imagem.offsetWidth
+  
+  })
+  console.log(soma)
 }
 
-console.log(window.innerWidth, window.outerWidth)
+window.onload= function(){
+  somaImagens()
+}
 
-const small = window.matchMedia ('(max-width: 600px)').matches
+const links = document.querySelectorAll('a')
 
-if(small){
-  console.log('Tela menor que 600px')
-}else{
-  console.log('Tela menor que 600px')
+links.forEach((link)=>{
+  const linkWidth = link.offsetWidth
+  const linkHeight = link.offsetHeight
+  if (linkWidth > 48 && linkHeight > 48){
+  console.log(link, 'Possui acessibilidade')
+ }else{
+   console.log('Não possui boa acessibilidade')
+ }
+})
+
+const browserSmall = window.matchMedia ('(max-width: 720px)').matches;
+if(browserSmall){
+  const menu = document.querySelector('.menu')
+  menu.classList.add('menu-mobile')
 }
