@@ -1,18 +1,25 @@
-const menu = document.querySelector('.menu')
+const menu = document.querySelectorAll('.menu a')
 
-menu.classList.add('ativo','teste')
-menu.classList.remove('azul')
+menu.forEach((item)=>{
+  item.classList.add('ativo')
+})
 
-// console.log(menu.classList)
+menu.forEach((item)=>{
+  item.classList.remove('ativo')
+})
 
-if(menu.classList.contains('azul')){
-  menu.classList.add('possui-azul')
-}else{
-  menu.classList.add('nao-possui-azul')
-}
+menu[0].classList.add('ativo')
 
-menu.className += ' vermelho'
+const imgs = document.querySelectorAll('img')
 
-const animais = document.querySelector('.animais')
+imgs.forEach((img)=>{
+  const possuiAtributo = img.hasAttribute('alt')
+  console.log(img, possuiAtributo)
+})
 
-console.log(animais.attributes['data-texto'])
+const link = document.querySelector('a[href^="http"')
+
+link.setAttribute('href','https://www.google.com')
+
+console.log(link)
+
