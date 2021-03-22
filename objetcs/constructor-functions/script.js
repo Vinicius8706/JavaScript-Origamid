@@ -1,10 +1,37 @@
-function Carro(marca,preco){
-  this.marca = marca
-  this.preco = preco
+function Dom(seletor){  
+  this.element =  function(){
+    return document.element.querySelector(this.selector)
+  }
+  this.ativar = function(){
+    this.element().classList.add('ativar')
+  }
 }
 
-const honda = new Carro('Honda', 3000) // cria um novo objeto vazio 
-honda.teste= 'oi'
+// Dom.seletor = 'ul'
+// Dom.ativar()
 
-const fiat =  new Carro('Fiat', 4000)
-fiat.marca = 'Fiat'
+const li = new Dom('li')
+const ul = new Dom('ul')
+
+const lastli = new Dom('li:last-child')
+
+const pessoa = {
+  nome: 'Nome pessoa',
+  idade: 0,
+  andar(){
+    console.log(this.nome + ' andou')
+  }
+  
+}
+
+function Pessoa(nome, idade){
+  this.nome = nome;
+  this.idade =  idade;
+  this.andar = function(){
+    console.log(this.nome + ' Andou')
+  }
+}
+
+const Joao = new Pessoa('João', 20)
+const Maria = new Pessoa('Maria', 25)
+const Bruno = new Pessoa('Bruno', 15)
