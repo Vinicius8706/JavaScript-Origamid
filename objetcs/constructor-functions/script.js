@@ -35,3 +35,21 @@ function Pessoa(nome, idade){
 const Joao = new Pessoa('João', 20)
 const Maria = new Pessoa('Maria', 25)
 const Bruno = new Pessoa('Bruno', 15)
+
+
+function Dom(seletor){
+  const elementList = document.querySelectorAll(seletor)
+  this.elements = elementList
+  this.addClass = function(classe){
+    elementList.forEach((element)=>{
+      element.classList.add(classe)
+    })
+  }
+}
+
+const listaItens = new Dom('li')
+const ul = new Dom('ul')
+
+listaItens.addClass('ativar')
+
+ul.addClass('ativar')
