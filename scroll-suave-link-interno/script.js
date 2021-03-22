@@ -75,3 +75,11 @@ function initScrollSuave(){
 
 
 initScrollSuave();
+
+const sections = document.querySelectorAll('.js-scroll')
+
+function animaScroll(){
+  console.log('Sim')
+}
+
+window.addEventListener('scroll', animaScroll)
