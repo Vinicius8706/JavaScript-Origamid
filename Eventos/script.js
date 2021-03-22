@@ -1,53 +1,42 @@
-const img = document.querySelector('img')
+// Quando o usuário clicar nos links internos do site adicione a classe ativo ao item clicado e remova dos demais itens como eles possuam a mesma. Previna o comportamento padrão desses links
 
-function callback(event){
-  console.log(event)
+const linksInternos = document.querySelectorAll('a[href^="#"]')
+
+function handleClick(event){
+  event.preventDefault();
+  linksInternos.forEach((link)=>[
+    link.classList.remove('ativo')
+  ]);
+  event.currentTarget.classList.add('ativo')
 }
 
-// img.addEventListener('click', callback)
+linksInternos.forEach((link)=>{
+  link.addEventListener('click', handleClick)
+})
 
-const animaisLista = document.querySelector('.animais-lista')
+// Selecione todos os elementos do site começando a partir do body, ao clique mostre exatamente quais elementos estão sendo clicados
 
-function callbackLista(event){
-  console.log(event.currentTarget)
-  // console.log(event.eventTarget) // onde o clique ocorreu
-  console.log(event.target) // string do click
+const todosElementos = document.querySelectorAll('body *')
 
+function handleElemento(event){
+  event.currentTarget.remove();
+  
 }
 
-animaisLista.addEventListener('click', callbackLista)
 
-// console.log(animaisLista)
 
-const linkExterno = document.querySelector('a[href^="http"')
+// todosElementos.forEach((elemento)=>{
+//   elemento.addEventListener('click', handleElemento)
+// })
 
-function handleLinkExterno(event){
-  event.preventDefault()
-  console.log(this.getAttribute(''))
-  console.log(event.currentTarget)
+// console.log(todosElementos)
 
-}
-
-linkExterno.addEventListener('click',handleLinkExterno)
-
-const h1 = document.querySelector('h1')
-
-function handleEvent(event) {
-  console.log(event.type, event)
-}
-
-// h1.addEventListener('click', handleEvent)
-// h1.addEventListener('mouseenter', handleEvent)
-
-// window.addEventListener('resize', handleEvent)
-
-function handleKeyboard(event){
-  if(event.key === 'a'){
-    document.body.classList.toggle('azul')
-  } else if(event.key === 'v'){
-    document.body.classList.toggle('vermelho')
+function handleClickT(event){
+  console.log(event.key)
+  if(event.key === 't'){ 
+    console.log('Clicou t')
+    document.documentElement.classList.toggle('textomaior')
   }
-
-window.addEventListener('keydown', callback)
 }
 
+window.addEventListener('keydown', handleClickT)
