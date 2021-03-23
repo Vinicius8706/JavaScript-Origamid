@@ -1,28 +1,15 @@
-function Pessoa(nome, idade){
+function Pessoa(nome, sobrenome,idade){
   this.nome = nome;
   this.idade = idade;
-  this.abracar = function(){
-    return 'Abraçou'
-  }
-  this.andar = function(){
-    return 'Andou pelo objeto'
-  }
+  this.sobrenome = sobrenome;
 }
 
-var obj = {
-  nome: 'Vinicius',
-  idade: 20,
+Pessoa.prototype.nomeCompleto = function(){
+  return `${this.nome} ${this.sobrenome}`
 }
 
-Pessoa.prototype.andar = function(){
-  return this.nome +'Pessoa andou'
-}
+const vinicius = new Pessoa('Vinicius', 'Farias', 20)
 
-Pessoa.prototype.nadar = function(){
-  return this.nome +'Pessoa nadar'
-}
-
-
-
-
-console.log(Pessoa.prototype)
+Object.getOwnPropertyNames(NodeList.prototype)
+Object.getOwnPropertyNames(HTMLCollection.prototype)
+Object.getOwnPropertyNames(Document.prototype)
