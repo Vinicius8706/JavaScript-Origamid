@@ -9,7 +9,7 @@ console.log(numeroMaximo) //spread
 
 const listaPrecos = ['R$ 59,99 ', 'R$ 100,222', 'R$ 230', 'r$ 200']
 
-function limparPreco(preco){
+function limparPreco(preco) {
   preco = +preco.toUpperCase().replace('R$', '').trim().replace(',','.')
   preco = +preco.toFixed(2)
   return preco
@@ -21,4 +21,4 @@ listaPrecos.forEach((preco)=>{
 
 console.log(soma.toLocaleString('pt-BR', {style: 'currency',  currency: 'BRL'}))
 
-limparPreco(listaPrecos)
+limparPreco(listaPrecos[1])
