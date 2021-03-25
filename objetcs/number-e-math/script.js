@@ -1,5 +1,24 @@
-console.log(Number.isInteger('ds'))
+const aleatorio = Math.floor(Math.random() * (2000 - 1050 + 1) + 1050)
 
-console.log(parseFloat('34343434')) //corta a virgula
+console.log(aleatorio)
 
-console.log(parseInt('100.27 reais'))
+const numeros = '4, 5, 20, 8, 9'
+const arrayNumeros = numeros.split(', ')
+const numeroMaximo = Math.max(...arrayNumeros)
+console.log(numeroMaximo) //spread
+
+const listaPrecos = ['R$ 59,99 ', 'R$ 100,222', 'R$ 230', 'r$ 200']
+
+function limparPreco(preco){
+  preco = +preco.toUpperCase().replace('R$', '').trim().replace(',','.')
+  preco = +preco.toFixed(2)
+  return preco
+}
+let soma = 0;
+listaPrecos.forEach((preco)=>{
+  soma += limparPreco(preco);
+})
+
+console.log(soma.toLocaleString('pt-BR', {style: 'currency',  currency: 'BRL'}))
+
+limparPreco(listaPrecos)
