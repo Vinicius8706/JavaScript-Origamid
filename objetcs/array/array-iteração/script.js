@@ -1,71 +1,59 @@
-// const carros = ['Ford','Fiat','Honda']
+const cursos = document.querySelectorAll('.curso')
+const arrayCursos = Array.from(cursos)
 
-// carros.forEach(function(item,index,array){
-//     console.log(item.toUpperCase())
-// })
-
-// const li = document.querySelectorAll('li')
-
-// li.forEach(item => {item.classList.add('ativa')})
-
-// const novaArray = carros.map((item,index,array)=>{
-//     console.log(item.toUpperCase(),index,array)
-//     return item;
-// })
-
-// console.log(novaArray)
-// const numeros = [2,4,5,6,78]
-
-// const numerosX2 = numeros.map(n => n *2)
-
-// console.log(numerosX2) // Se o objetivo for mudar os valores da array atual, sempre utilizar o map, pois assim uma nova array com os valores modificados retornado e voce pode imediatamente iterar novamente estes valores.
-
-// const aulas = [
-//     {
-//         nome: 'HTML 1',
-//         min: 15
-//     },
-//     {
-//         nome: 'HTML 2',
-//         min: 10
-//     },
-//     {
-//         nome: 'CSS 1',
-//         min: 20
-//     },
-//     {
-//         nome: 'JS 1',
-//         min: 25
-//     },
-
-// ]
-
-// const tempoAulas = aulas.map(aula => aula.min)
-
-// console.log(tempoAulas)
-
-// function nomeAulas(aula){
-//     return aula.nome;
-// }
-
-// const arrayNomeAulas = aulas.map(nomeAulas)
-
-// console.log(arrayNomeAulas)
-
-const aulas = [10,25,30]
-
-const total1 = aulas.reduce((acumulador, item,index,array) => {
-    console.log(acumulador,item,index,array)
-    return acumulador + item
-}, 33)
-
-const numeros = [10,25,30, 3,54,33,22]
-
-const maiorNumero = numeros.reduce((anterior,atual)=>{
-    if(anterior < atual) {
-        return anterior
-    } else{
-        return atual
+const objetosCurso = arrayCursos.map((curso)=>{
+    const titulo = curso.querySelector('h1').innerText
+    const descricao = curso.querySelector('p').innerText
+    const aulas = curso.querySelector('.aulas').innerText
+    const horas = curso.querySelector('.horas').innerText
+    return{
+        titulo, descricao, aulas, horas
     }
-
 })
+
+console.log(objetosCurso)
+
+const numeros = [3,44, 333, 23, 122, 322, 33]
+
+const maioresque100 = numeros.filter(n => n  > 100)
+
+console.log(maioresque100)
+
+const instrumentos = ['Guitarra','Baixo','Bateria','Teclado']
+
+const acharBaixo = instrumentos.some((item)=>{
+    return item === 'Baixo'
+})
+
+console.log(acharBaixo)
+
+const compras = [
+    {
+        item:'Banana',
+        preco: 'R$ 4,99'
+    },
+    {
+        item:'Ovo',
+        preco: 'R$ 2,99'
+    },
+    {
+        item:'Carne',
+        preco: 'R$ 25,49'
+    },
+    {
+        item:'Refrigerante',
+        preco: 'R$ 5,35'
+    },
+    {
+        item:'Queijo',
+        preco: 'R$ 10,60'
+    },
+]
+
+const valorTotal = compras.reduce((acumulador, item)=>{
+    const precoLimpo = +item.preco.replace('R$ ','').replace(',','.')
+    return acumulador + precoLimpo
+    
+},0)
+
+console.log(valorTotal)
