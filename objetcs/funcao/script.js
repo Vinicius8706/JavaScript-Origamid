@@ -25,3 +25,9 @@ const cursoJS = h1Titulo('Cursos de JavaScript')
 console.log(cursoJS)
 
 console.log(h1Titulo('Cursos de HTML'))
+
+const pessoa = new Object({
+  nome: 'Vinicius'
+})
+
+console.log(pessoa)

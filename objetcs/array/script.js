@@ -23,10 +23,10 @@ const ordem = estudantes.sort()
 console.log(ordem)
 const inverte = estudantes.reverse()
 console.log(inverte)
-const searchJoana = estudantes.indexOf('Joana')
+const searchJoana = estudantes.includes('Joana')
 console.log(searchJoana)
 
-const searchJu = estudantes.indexOf('Juliana')
+const searchJu = estudantes.incluses('Juliana')
 console.log(searchJu)
 
 let html = `<section>
