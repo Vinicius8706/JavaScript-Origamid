@@ -1,0 +1,12 @@
+[data-dropdown] {
+  position: relative;
+}
+
+.dropwdown-menu {
+  position: absolute;
+  background: #e54;
+  border: 2px solid #333;
+  z-index: 200; /* com posicionamento absoluto fica em cima do item */
+  top: 38px;
+
+}
