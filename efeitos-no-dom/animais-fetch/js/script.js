@@ -18,4 +18,5 @@ initToolTip();
 initDropdownMenu()
 initmenuMobile()
 initAnimaNumeros()
+initFuncionamento() 
 initFetchAnimais()
