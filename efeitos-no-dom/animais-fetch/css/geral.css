@@ -304,3 +304,11 @@ animais-lista li{
   transform: translate3d(0, 0 ,0);
   transition: .3s
 }
+
+.btc-preco{
+  background: #3f4;
+  padding: .2rem .5rem;
+  font-weight: bold;
+  border-radius: 2px;
+
+}
