@@ -20,7 +20,17 @@ export default class validarCpf {
   }
 
   validarNaMudança(cpfElement) {
-    console.log(this.validar(cpfElement.value))
+    if(this.validar(cpfElement.value)) {
+      cpfElement.value = this.formatar(cpfElement.value)
+      cpfElement.classList.remove('erro')
+      cpfElement.classList.add('valido')
+      cpfElement.nextElementSibling.classList.remove('ativar')
+
+    } else {
+      cpfElement.classList.add('erro')
+      cpfElement.classList.remove('valido')
+      cpfElement.nextElementSibling.classList.add('ativar')
+    }
   }
 
   adicionarEvento() {
@@ -29,8 +39,16 @@ export default class validarCpf {
     })
   }
 
+  adicionarErroSpan(){
+    const errorElement = document.createElement('span')
+    errorElement.classList.add('erro-text')
+    errorElement.innerText = 'CPF Inválido'
+    this.element.parentElement.insertBefore(errorElement, this.element.nextElementSibling)
+  }
+
   iniciar(){
     this.adicionarEvento()
+    this.adicionarErroSpan()
     return this
   }
 }
