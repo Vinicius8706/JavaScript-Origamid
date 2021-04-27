@@ -9,3 +9,4 @@ function contagem(){
 const ativarIncremento = contagem()
 
 ativarIncremento()
+
